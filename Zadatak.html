@@ -2,103 +2,134 @@
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moderni Web Templet</title>
+    <title>Moj Školski Projekt</title>
     <style>
-        /* Osnovni stilovi i Reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f9; }
+        /* Osnovni stilovi */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eeeeee; /* Svijetlo siva pozadina */
+        }
 
-        /* Navigacija */
-        nav { background: #fff; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        nav .logo { font-size: 1.5rem; font-weight: bold; color: #2d3436; }
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { text-decoration: none; color: #636e72; transition: 0.3s; }
-        nav ul li a:hover { color: #0984e3; }
+        /* Navigacija - fiksna na vrhu */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
 
-        /* Hero sekcija */
-        .hero { height: 60vh; background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; max-width: 600px; opacity: 0.9; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
 
-        /* Glavni sadržaj */
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        
-        /* Grid za slike i tekst */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
-        
-        /* Placeholder za kartice */
-        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .img-placeholder { width: 100%; height: 200px; background: #dfe6e9; border-radius: 8px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; color: #b2bec3; font-weight: bold; }
-        .card h3 { margin-bottom: 10px; color: #2d3436; }
-        
+        /* Hero sekcija - jednostavna plava boja bez gradijenta */
+        .header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        /* Glavni kontejner */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        /* Grid sustav - jednostavan raspored */
+        .red {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        /* Kartice s tekstom i placeholderima */
+        .stupac {
+            background-color: white;
+            width: 30%; /* Tri stupca u redu */
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc; /* Običan rub umjesto sjene */
+            box-sizing: border-box;
+        }
+
+        /* Sivi box za sliku */
+        .slika-okvir {
+            background-color: #ddd;
+            height: 150px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
         /* Footer */
-        footer { background: #2d3436; color: white; text-align: center; padding: 40px 0; margin-top: 60px; }
-        
-        /* Responzivnost */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Responzivnost za mobitele (da se ne raspadne) */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            nav ul { display: none; } /* Jednostavnosti radi, sakriveno na mobitelu */
+            .stupac {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">MojBrand</div>
-        <ul>
-            <li><a href="#">Početna</a></li>
-            <li><a href="#">O nama</a></li>
-            <li><a href="#">Usluge</a></li>
-            <li><a href="#">Kontakt</a></li>
-        </ul>
+        <a href="#">Početna</a>
+        <a href="#">O nama</a>
+        <a href="#">Kontakt</a>
     </nav>
 
-    <header class="hero">
-        <h1>Glavni Naslov Stranice</h1>
-        <p>Ovo je savršeno mjesto za tvoj "elevator pitch". Kratko, jasno i privlačno opiši što radiš.</p>
-    </header>
+    <div class="header">
+        <h1>Naslov moje stranice</h1>
+        <p>Ovo je kratki opis koji objašnjava o čemu se radi na ovoj web stranici.</p>
+    </div>
 
-    <main class="container">
-        <h2 style="text-align: center; margin-bottom: 30px;">Naše Usluge</h2>
-        
-        <div class="grid">
-            <div class="card">
-                <div class="img-placeholder">SLIKA 1 (800x600)</div>
-                <h3>Naslov Usluge 1</h3>
-                <p>Ovdje ide opis tvoje prve usluge ili proizvoda. Možeš dodati više teksta kako bi objasnio prednosti.</p>
+    <div class="container">
+        <h2>Moje sekcije</h2>
+        <div class="red">
+            
+            <div class="stupac">
+                <div class="slika-okvir">Ovdje ide slika 1</div>
+                <h3>Podnaslov 1</h3>
+                <p>Ovdje napiši tekst o prvoj temi. Može biti o hobijima, školi ili nekom projektu.</p>
             </div>
 
-            <div class="card">
-                <div class="img-placeholder">SLIKA 2 (800x600)</div>
-                <h3>Naslov Usluge 2</h3>
-                <p>Zanimljiv detalj o tvojem poslovanju. Koristi kratke rečenice kako bi posjetitelji brže čitali.</p>
+            <div class="stupac">
+                <div class="slika-okvir">Ovdje ide slika 2</div>
+                <h3>Podnaslov 2</h3>
+                <p>Tekst za drugu temu. Dizajn je čist i pregledan, baš kako profesori vole.</p>
             </div>
 
-            <div class="card">
-                <div class="img-placeholder">SLIKA 3 (800x600)</div>
-                <h3>Naslov Usluge 3</h3>
-                <p>Još jedan placeholder za tekst. Ovaj dizajn se automatski prilagođava širini ekrana mobitela.</p>
+            <div class="stupac">
+                <div class="slika-okvir">Ovdje ide slika 3</div>
+                <h3>Podnaslov 3</h3>
+                <p>Još malo teksta za kraj ove sekcije. Sve je poravnato i u istom stilu.</p>
             </div>
+
         </div>
-    </main>
+    </div>
 
     <footer>
-        <p>&copy; 2024 MojBrand. Sva prava pridržana.</p>
+        <p>Izradio: Ime i Prezime | Razred | 2026.</p>
     </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 
 
